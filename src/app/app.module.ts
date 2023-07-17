@@ -8,6 +8,7 @@ import { LoginComponent } from './components/users/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent 
+    LoginComponent,
+    HomeComponent 
   ],
   imports: [
     BrowserModule,
