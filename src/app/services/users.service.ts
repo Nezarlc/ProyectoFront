@@ -11,12 +11,18 @@ export class UsersService {
   private baseUrls: string;
 
   constructor() { 
-    this.baseUrls = 'http://localhost:3000/api/users';
+    this.baseUrls = 'http://localhost:3001/api/users';
   }
 
   register(formValue: any){
     return firstValueFrom(
       this.httpClient.post<any>(`${this.baseUrls}/registro`, formValue)
+    )
+  }
+
+  login(formValue: any){
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrls}/login`, formValue)
     )
   }
 }

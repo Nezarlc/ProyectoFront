@@ -1,1 +1,25 @@
-<p>login works!</p>
+
+
+    <div class="container-sm">
+        <div class="row altura"></div>
+
+        <div class="row border shadow">
+
+
+            <form action="http://localhost:4200/register" [formGroup]="formulario" (ngSubmit)="onSubmit()" class="align-middle" >
+
+                <div class="mb-3">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="mb-3">
+                    <label for="">Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+                </div>
+                <input type="submit" value="Login" class="btn btn-info">
+
+            </form>
+        </div>
+
+        <div class="row altura"></div>
+    </div>
