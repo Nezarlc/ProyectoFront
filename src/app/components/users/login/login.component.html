@@ -3,11 +3,13 @@
     <div class="container-sm">
         <div class="row altura"></div>
 
-        <div class="row border shadow">
+        <div class="col-6 border shadow p-4 rounded rounded-5" >
 
 
             <form action="http://localhost:4200/register" [formGroup]="formulario" (ngSubmit)="onSubmit()" class="align-middle" >
-
+              
+                <p *ngIf="showError" style="color: red;">Email/Password incorrectos</p>
+                
                 <div class="mb-3">
                     <label for="">Email</label>
                     <input type="text" class="form-control" formControlName="email">
@@ -16,10 +18,12 @@
                     <label for="">Password</label>
                     <input type="password" class="form-control" formControlName="password">
                 </div>
-                <input type="submit" value="Login" class="btn btn-info">
-
+                <div class="login">
+                    <input type="submit" value="Login" class="btn btn-info">
+                    <a href="/register">¿no tienes cuenta?</a>
+                </div>
             </form>
         </div>
 
-        <div class="row altura"></div>
     </div>
+

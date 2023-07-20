@@ -11,6 +11,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class LoginComponent {
 
   formulario: FormGroup;
+  showError: boolean = false;
 
   userService = inject(UsersService);
 
@@ -28,7 +29,9 @@ export class LoginComponent {
     console.log(response.token);
     
     if(response.token){
-      this.router.navigate(['/register']);
+      this.router.navigate(['/home']);
+    }else{
+      this.showError = true;
     }
     
   }

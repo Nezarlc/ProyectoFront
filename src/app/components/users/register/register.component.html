@@ -1,25 +1,44 @@
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-    <div class="mb-3">
-        <label for="">Username</label>
-        <input type="text" class="form-control" formControlName="username">
-    </div>
-    <div class="mb-3">
-        <label for="">Email</label>
-        <input type="text" class="form-control" formControlName="email">
-    </div>
-    <div class="mb-3">
-        <label for="">Rol</label>
-        <input type="text" class="form-control" formControlName="rol">
-    </div>
-    <div class="mb-3">
-        <label for="">Datos</label>
-        <input type="number" class="form-control" formControlName="id_datos">
-    </div>
-    <div class="mb-3">
-        <label for="">Password</label>
-        <input type="password" class="form-control" formControlName="password">
-    </div>
-    <input type="submit" value="Register" class="btn btn-info">
+<script type="module">
+    import { Toast } from 'bootstrap.esm.min.js'
+  
+    Array.from(document.querySelectorAll('.toast'))
+      .forEach(toastNode => new Toast(toastNode))
+  </script>
+  
+<div class="container-sm">
+    <div class="row altura"></div>
 
-</form>
+    <div class="col-8 border shadow p-4 rounded rounded-5" >
+
+
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="needs-validation">
+
+            <div class="mb-3">
+                <label for="">Username</label>
+                <input type="text" class="form-control" formControlName="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="">Email</label>
+                <input type="text" class="form-control" formControlName="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="">Rol</label>
+                <input type="text" class="form-control" formControlName="rol" required>
+            </div>
+            <div class="mb-3">
+                <label for="">Datos</label>
+                <input type="number" class="form-control" formControlName="id_datos" required>
+            </div>
+            <div class="mb-3">
+                <label for="">Password</label>
+                <input type="password" class="form-control" formControlName="password" required> 
+            </div>
+            <input type="submit" value="Register" class="btn btn-info">
+        
+        </form>
+        
+    </div>
+
+</div>
+
