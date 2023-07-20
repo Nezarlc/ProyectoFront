@@ -9,3 +9,22 @@
     height: 100%;
     object-fit: cover; /* Recorta y ajusta la imagen para que llene el contenedor */
 }
+
+.image-container-card-destacados {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    height: 300px;
+    overflow: hidden; /* Para recortar la imagen que sobrepasa el contenedor */
+}
+
+.image-container-card-destacados img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta y ajusta la imagen para que llene el contenedor */
+}
+
+.container-destacados-interes {
+
+    max-height: 50px;
+}
