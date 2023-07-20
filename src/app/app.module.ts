@@ -26,7 +26,7 @@ import { HeadComponent } from './components/head/head.component';
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
