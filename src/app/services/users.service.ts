@@ -25,4 +25,10 @@ export class UsersService {
       this.httpClient.post<any>(`${this.baseUrls}/login`, formValue)
     )
   }
+
+  validateToken(token: any){
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrls}/validate`, token)
+    )
+  }
 }

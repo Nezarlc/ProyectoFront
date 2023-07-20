@@ -24,7 +24,12 @@
     object-fit: cover; /* Recorta y ajusta la imagen para que llene el contenedor */
 }
 
-.container-destacados-interes {
 
-    max-height: 50px;
+.container-card{
+    min-height: 650px;
+}
+
+.container-card-altura{
+
+    height: 100%;
 }

@@ -27,9 +27,10 @@ export class LoginComponent {
 
     const response = await this.userService.login(this.formulario.value);
     console.log(response.token);
+    const datos = {token: response.token};
     
     if(response.token){
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home'], {queryParams: datos });
     }else{
       this.showError = true;
     }

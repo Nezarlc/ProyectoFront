@@ -23,7 +23,7 @@
                     <a class="nav-link" href="#">Pricing</a>
                     </li>
                 </ul>
-                <span class="navbar-text">
+                <span class="navbar-text" *ngIf="notLog; else isLog">
                     <a href="/login" class="nav-link">Login</a>
                 </span>
                 </div>
@@ -31,3 +31,7 @@
         </div>
     </nav>
 </header>
+
+<ng-template #isLog>
+    <p>Por favor, inicia sesión para acceder a este contenido.</p>
+</ng-template>
