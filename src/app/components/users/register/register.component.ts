@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl  } from '@angular/forms';
 import { Injectable, inject } from '@angular/core';
 import { UsersService } from 'src/app/services/users.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class RegisterComponent {
 
     userService = inject(UsersService);
 
-    constructor() {
+    constructor(private router: Router) {
 
       this.formulario = new FormGroup({
         username: new FormControl(),
@@ -30,7 +31,7 @@ export class RegisterComponent {
 
       const response = await this.userService.register(this.formulario.value);
       //console.log(response);
-      
+      this.router.navigate(['/home']);
     }
 
 }

@@ -4,5 +4,10 @@ body{
 }
 
 .altura{
-        height: 300px;
+        height: 250px;
+}
+
+.login {
+    display: flex;
+    justify-content: space-between;
 }
