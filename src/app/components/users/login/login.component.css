@@ -11,3 +11,8 @@ body{
     display: flex;
     justify-content: space-between;
 }
+
+.mar-b {
+
+    margin-bottom: 24.5vh;
+}

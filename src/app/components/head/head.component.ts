@@ -20,15 +20,18 @@ export class HeadComponent implements OnInit{
 
   async ngOnInit(){
 
-    this.route.params.subscribe(params => {
-      this.parametroRuta = params['token']; // 'id' es el nombre del parámetro en la ruta
-    });
+    const token = localStorage.getItem('token');
 
     console.log(this.parametroRuta);
   
-    const response = await this.userService.validateToken(this.parametroRuta);
-    this.notLog = response;
+    const response = await this.userService.validateToken();
+    if(response.validacion)
+      this.notLog = false;
     
+  }
+
+  logout(){
+    localStorage.removeItem('token');
   }
 
 }
