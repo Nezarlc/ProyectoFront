@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -11,24 +11,41 @@ export class UsersService {
   private baseUrls: string;
 
   constructor() { 
-    this.baseUrls = 'http://localhost:3001/api/users';
+    this.baseUrls = 'http://localhost:3001/api';
   }
+
+  token_validacion?: string;
+  
+  
+  private httpOptions = {
+    
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': localStorage.getItem('token') ?? '' // Agrega el token en la cabecera como 'Bearer <tu_token>'
+    })
+  };
 
   register(formValue: any){
     return firstValueFrom(
-      this.httpClient.post<any>(`${this.baseUrls}/registro`, formValue)
+      this.httpClient.post<any>(`${this.baseUrls}/users/registro`, formValue)
     )
   }
 
   login(formValue: any){
     return firstValueFrom(
-      this.httpClient.post<any>(`${this.baseUrls}/login`, formValue)
+      this.httpClient.post<any>(`${this.baseUrls}/users/login`, formValue)
     )
   }
 
-  validateToken(token: any){
-    return firstValueFrom(
-      this.httpClient.post<any>(`${this.baseUrls}/validate`, token)
+  validateToken(){
+   
+    return firstValueFrom(      
+      this.httpClient.post<any>(`${this.baseUrls}/users/validate`,this.httpOptions)
     )
+  }
+
+  getUserData(){
+
+
   }
 }

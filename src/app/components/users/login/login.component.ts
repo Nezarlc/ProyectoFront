@@ -26,11 +26,10 @@ export class LoginComponent {
   async onSubmit(){
 
     const response = await this.userService.login(this.formulario.value);
-    console.log(response.token);
-    const datos = {token: response.token};
+    localStorage.setItem('token', response.token);
     
     if(response.token){
-      this.router.navigate(['/home'], {queryParams: datos });
+      this.router.navigate(['/home']);
     }else{
       this.showError = true;
     }

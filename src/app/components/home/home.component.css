@@ -24,6 +24,19 @@
     object-fit: cover; /* Recorta y ajusta la imagen para que llene el contenedor */
 }
 
+.image-container-card-multiple {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 20%;
+    height: 300px;
+    overflow: hidden; /* Para recortar la imagen que sobrepasa el contenedor */
+}
+
+.image-container-card-multiple img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover; /* Recorta y ajusta la imagen para que llene el contenedor */
+}
 
 .container-card{
     min-height: 650px;
